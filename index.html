@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5f7f6">
+<meta name="description" content="简洁、清晰、适配手机的 Monitor 公开状态页主题。">
+<title>清简 · Monitor</title>
+<style>
+:root{color-scheme:light;--bg:#f5f7f6;--paper:#fff;--ink:#14221d;--muted:#75827d;--line:#e6ece8;--accent:#177a58;--accent-soft:#e7f4ed;--blue:#4b74c4;--amber:#b87a16;--red:#c44d4d;--shadow:0 8px 24px rgba(20,34,29,.045);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-size:14px;line-height:1.55}.page{width:min(1120px,100% - 32px);margin:0 auto;padding:24px 0 50px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:32px}.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.02em}.brand-mark{width:31px;height:31px;border-radius:10px;background:var(--ink);display:grid;place-items:center;color:#fff;font-size:14px}.brand-sub{font-size:12px;color:var(--muted);font-weight:500;letter-spacing:0}.live-state{display:flex;align-items:center;gap:7px;color:var(--muted);font-size:12px;white-space:nowrap}.live-dot{width:7px;height:7px;border-radius:50%;background:#aeb8b3}.live-state.connected .live-dot{background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}.live-state.demo .live-dot{background:var(--blue);box-shadow:0 0 0 3px #edf2fc}.hero{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:21px}.hero h1{font-size:clamp(25px,4vw,34px);line-height:1.2;margin:0 0 6px;letter-spacing:-.035em}.hero p{margin:0;color:var(--muted);font-size:13px}.hero-meta{text-align:right;color:var(--muted);font-size:12px;white-space:nowrap}.notice{margin:0 0 18px;padding:12px 15px;background:#eef4f0;border:1px solid #e1ebe4;border-radius:12px;color:#355246;font-size:13px;white-space:pre-wrap;overflow-wrap:anywhere}.summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:25px}.stat{background:var(--paper);border:1px solid var(--line);border-radius:15px;padding:15px 16px;box-shadow:var(--shadow);min-width:0}.stat-label{font-size:12px;color:var(--muted);margin-bottom:6px}.stat-value{font-size:21px;line-height:1.25;font-weight:700;letter-spacing:-.025em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.stat-note{margin-top:4px;font-size:11px;color:var(--muted)}.filters{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 13px}.group-list{display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;min-width:0;padding:2px 0}.group-list::-webkit-scrollbar{display:none}.chip{border:1px solid var(--line);background:#fff;color:#5c6963;border-radius:999px;padding:7px 12px;font:inherit;font-size:12px;white-space:nowrap;cursor:pointer}.chip.active{color:#fff;background:var(--ink);border-color:var(--ink)}.search{flex:0 0 210px;max-width:40%;border:1px solid var(--line);border-radius:10px;background:#fff;padding:9px 11px;font:inherit;font-size:12px;color:var(--ink);outline:none}.search:focus{border-color:#7eb69b;box-shadow:0 0 0 3px #e5f2ea}.section-head{display:flex;align-items:center;justify-content:space-between;margin:0 0 12px;color:var(--muted);font-size:12px}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}.server-card{background:var(--paper);border:1px solid var(--line);border-radius:17px;padding:17px 17px 15px;box-shadow:var(--shadow);min-width:0}.card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}.node-title{display:flex;align-items:center;gap:8px;min-width:0}.node-title h2{font-size:17px;line-height:1.3;margin:0;overflow-wrap:anywhere;letter-spacing:-.02em}.country{display:inline-flex;align-items:center;border-radius:7px;background:#f1f4f2;color:#53625a;font-size:10px;font-weight:700;letter-spacing:.06em;padding:3px 6px;flex:none}.status{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:5px 9px;font-size:11px;font-weight:600;white-space:nowrap;flex:none}.status::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}.status.online{color:var(--accent);background:var(--accent-soft)}.status.offline{color:#7c8580;background:#f1f2f1}.status.warming{color:var(--amber);background:#fff5df}.card-sub{display:flex;align-items:center;flex-wrap:wrap;gap:6px 9px;margin-top:7px;color:var(--muted);font-size:11px}.group-tag{color:#496b58}.remark{margin:13px 0 0;padding:9px 11px;border-radius:9px;background:#f7f9f7;color:#54655b;font-size:12px;overflow-wrap:anywhere;white-space:pre-wrap}.card-section{border-top:1px solid var(--line);margin-top:14px;padding-top:13px}.section-label{margin:0 0 10px;color:#52625a;font-size:11px;font-weight:700;letter-spacing:.04em}.resource-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 14px}.resource{min-width:0}.resource-top{display:flex;justify-content:space-between;gap:8px;align-items:baseline;margin-bottom:5px}.resource-name{font-size:11px;color:var(--muted)}.resource-value{font-size:12px;font-weight:650;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.bar{height:5px;border-radius:99px;background:#edf1ee;overflow:hidden}.bar span{display:block;height:100%;border-radius:99px;background:var(--accent);max-width:100%;transition:width .35s}.bar.warn span{background:var(--amber)}.bar.danger span{background:var(--red)}.mini{font-size:10px;color:var(--muted);margin-top:3px}.live-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px 10px}.kv{min-width:0}.kv-label{display:block;font-size:10px;color:var(--muted);margin-bottom:2px}.kv-value{display:block;font-size:12px;font-weight:600;overflow-wrap:anywhere}.spec-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 16px}.spec{min-width:0}.spec dt{font-size:10px;color:var(--muted);margin:0 0 2px}.spec dd{font-size:11px;font-weight:550;margin:0;overflow-wrap:anywhere}.plan-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.plan{border-radius:10px;padding:10px 11px;background:#f7f9f7;min-width:0}.plan-label{font-size:10px;color:var(--muted);margin-bottom:3px}.plan-value{font-size:12px;font-weight:650;overflow-wrap:anywhere}.plan-note{font-size:10px;color:var(--muted);margin-top:2px;overflow-wrap:anywhere}.history{margin-top:13px;border-top:1px solid var(--line);padding-top:11px}.history summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;color:#52625a;font-size:12px;font-weight:650}.history summary::-webkit-details-marker{display:none}.history summary::after{content:"＋";font-size:14px;color:var(--muted);font-weight:400}.history[open] summary::after{content:"−"}.history-body{padding-top:10px}.history-toolbar{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}.history-toolbar select{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:8px;padding:6px 8px;font:inherit;font-size:11px}.history-hint{font-size:10px;color:var(--muted)}.chart-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.chart{border:1px solid var(--line);border-radius:10px;padding:9px 9px 7px;min-width:0}.chart-title{font-size:10px;color:var(--muted);display:flex;justify-content:space-between;gap:8px}.chart-title strong{font-size:10px;color:var(--ink);font-weight:650}.chart svg{display:block;width:100%;height:54px;margin-top:3px;overflow:visible}.chart-empty{height:54px;display:grid;place-items:center;color:#9aa49f;font-size:10px}.ping-list{display:grid;gap:8px;margin-top:10px}.ping-row{display:grid;grid-template-columns:minmax(0,90px) 1fr 56px;gap:8px;align-items:center;font-size:10px}.ping-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#66736c}.ping-track{height:4px;border-radius:99px;background:#edf1ee;overflow:hidden}.ping-track span{display:block;height:100%;background:var(--blue);border-radius:99px}.ping-value{text-align:right;color:#45544c;font-variant-numeric:tabular-nums}.loading{padding:30px 16px;text-align:center;color:var(--muted);background:#fff;border:1px solid var(--line);border-radius:14px}.error-box{padding:17px;border:1px solid #f0d5d5;background:#fff8f8;color:#9d4545;border-radius:12px;font-size:13px}.empty{padding:30px 16px;text-align:center;color:var(--muted);background:#fff;border:1px dashed #d8e0da;border-radius:14px}.retry{margin-top:10px;border:1px solid #dbe2dc;background:#fff;color:var(--ink);border-radius:8px;padding:7px 11px;font:inherit;font-size:12px;cursor:pointer}.foot{display:flex;justify-content:space-between;gap:12px;margin-top:24px;color:#8b9690;font-size:10px}.demo-ribbon{margin-bottom:16px;display:inline-flex;align-items:center;gap:5px;padding:5px 9px;background:#edf2fc;color:#5570a1;border-radius:999px;font-size:10px;font-weight:650}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:760px){.page{width:min(100% - 24px,560px);padding:17px 0 34px}.topbar{margin-bottom:25px}.hero{align-items:flex-start;flex-direction:column;gap:8px}.hero-meta{text-align:left}.summary{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-bottom:19px}.stat{padding:12px 13px;border-radius:12px}.stat-value{font-size:19px}.filters{align-items:stretch;flex-direction:column;gap:8px}.group-list{order:2}.search{order:1;flex:initial;max-width:100%;width:100%}.cards{grid-template-columns:1fr;gap:11px}.server-card{padding:15px 14px 13px;border-radius:15px}.live-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 7px}.foot{flex-direction:column}.chart-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:360px){.live-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.resource-grid,.spec-grid,.plan-grid{gap:8px}.server-card{padding:13px 12px}.chart-grid{grid-template-columns:1fr}.node-title{align-items:flex-start;flex-direction:column;gap:4px}}
+
+[hidden]{display:none!important}
+/* 清晰的分组卡片与轻量指标框 */
+.summary{grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin-bottom:25px}
+.stat{position:relative;overflow:hidden;border-radius:17px;padding:16px 17px;background:linear-gradient(145deg,#fff 0%,#f8fbf9 100%);box-shadow:0 9px 25px rgba(20,34,29,.055)}
+.stat::after{content:"";position:absolute;right:-19px;top:-23px;width:67px;height:67px;border-radius:50%;background:var(--accent-soft);opacity:.72}
+.stat-label,.stat-value,.stat-note{position:relative;z-index:1}
+.stat-value{font-size:22px;font-variant-numeric:tabular-nums}
+.server-card{padding:16px 17px 14px;border-radius:20px;box-shadow:0 10px 28px rgba(20,34,29,.055)}
+.card-head{align-items:center}
+.node-title h2{font-size:16px}
+.card-sub{min-height:18px}
+.card-section{border:0;margin-top:13px;padding:0}
+.section-label{display:flex;align-items:center;gap:7px;margin-bottom:8px;color:#52625a;font-size:11px}
+.section-label::before{content:"";width:7px;height:7px;border-radius:2px;background:#7eb69b;box-shadow:0 0 0 3px #eaf4ed}
+.resource-panel,.network-panel{padding:12px;border:1px solid #e8eeea;border-radius:15px;background:linear-gradient(135deg,#f8fbf9,#f3f7f5)}
+.resource-grid{gap:9px}
+.resource-panel .resource-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.resource{padding:9px 9px 8px;border:1px solid #e8eeea;border-radius:11px;background:#fff;box-shadow:0 2px 7px rgba(20,34,29,.025)}
+.resource-top{margin-bottom:6px}
+.resource-name{font-size:10px}
+.resource-value{font-size:11px}
+.bar{height:4px}
+.mini{font-size:9px}
+.network-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.network-stat{min-width:0;padding:10px 11px;border:1px solid #e3ebe6;border-radius:12px;background:#fff;position:relative;overflow:hidden}
+.network-stat::before{content:"";position:absolute;left:0;top:10px;bottom:10px;width:3px;border-radius:0 3px 3px 0;background:#75ae8d}
+.network-stat.upload::before{background:#7e9ed9}
+.network-label{display:block;margin-left:4px;color:var(--muted);font-size:10px}
+.network-value{display:block;margin:3px 0 0 4px;font-size:14px;font-weight:700;line-height:1.3;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+.detail-link{margin-top:11px;padding:10px 12px;border-radius:12px;background:#fbfdfb}
+.traffic-summary{margin-top:17px;padding:17px 18px 16px;border:1px solid #dfe9e2;border-radius:19px;background:linear-gradient(135deg,#f8fbf9 0%,#fff 70%);box-shadow:0 9px 25px rgba(20,34,29,.045)}
+.traffic-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:13px}
+.traffic-title{display:flex;align-items:center;gap:9px;margin:0;color:#34483c;font-size:13px;font-weight:700}
+.traffic-title::before{content:"";width:24px;height:24px;border-radius:8px;background:#e6f3eb;box-shadow:inset 0 0 0 1px #d7eadc}
+.traffic-subtitle{margin:3px 0 0 33px;color:var(--muted);font-size:10px}
+.traffic-pill{flex:none;padding:5px 9px;border:1px solid #e2ebe5;border-radius:999px;background:#fff;color:#617169;font-size:10px;font-weight:650}
+.traffic-values{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:10px}
+.traffic-used-label{display:block;color:var(--muted);font-size:10px}
+.traffic-used{display:block;margin-top:2px;font-size:22px;font-weight:750;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.traffic-quota{text-align:right;color:#506258;font-size:11px;font-weight:650;overflow-wrap:anywhere}
+.traffic-track{height:9px;overflow:hidden;border:1px solid #e5ece7;border-radius:999px;background:#edf2ee}
+.traffic-track span{display:block;width:0;height:100%;border-radius:inherit;background:linear-gradient(90deg,#53a477,#177a58);transition:width .4s}
+.traffic-track.warn span{background:linear-gradient(90deg,#e2ad4a,#b87a16)}
+.traffic-track.danger span{background:linear-gradient(90deg,#df8585,#c44d4d)}
+.traffic-note{margin:8px 0 0;color:#748178;font-size:10px;line-height:1.45}
+.detail-live{margin:0 0 13px}
+.detail-resources{margin:0 0 13px}
+.detail-resources .resource-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.detail-live .live-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
+.detail-live .kv{padding:10px;border:1px solid #e8eeea;border-radius:11px;background:#f9fbf9}
+.detail-live .kv-label{font-size:10px}
+.detail-live .kv-value{font-size:12px;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+@media(max-width:760px){
+ .summary{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:19px}
+ .stat{padding:12px 10px;border-radius:14px}
+ .stat-value{font-size:16px}
+ .stat-label{font-size:11px}
+ .stat-note{font-size:9px}
+ .server-card{padding:14px 13px 12px;border-radius:17px}
+ .resource-panel,.network-panel{padding:10px;border-radius:13px}
+ .network-value{font-size:13px}
+ .traffic-summary{padding:14px;border-radius:16px}
+ .traffic-used{font-size:20px}
+ .detail-live .live-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+ .detail-live .kv{padding:9px 8px}
+ .detail-resources .resource-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:360px){
+ .stat-value{font-size:14px}
+ .resource-grid{grid-template-columns:1fr 1fr}
+ .detail-live .live-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .traffic-head{align-items:flex-start}
+ .traffic-pill{max-width:120px;white-space:normal;text-align:center}
+}
+.server-card{padding:15px 16px 13px}
+.server-card .card-section{margin-top:11px;padding-top:10px}
+.server-card .section-label{margin-bottom:8px}
+.server-card .live-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px 10px}
+.server-card .kv-value{font-size:11px}
+.detail-link{display:flex;align-items:center;justify-content:space-between;width:100%;margin-top:12px;padding:10px 11px;border:1px solid var(--line);border-radius:10px;background:#fbfcfb;color:#355246;font:inherit;font-size:12px;font-weight:650;text-align:left;cursor:pointer;transition:background .15s,border-color .15s}
+.detail-link:hover{background:var(--accent-soft);border-color:#cde4d5}
+.detail-link span:last-child{font-size:16px;color:var(--accent)}
+.detail-screen{max-width:900px;margin:0 auto}
+.detail-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+.back-link{border:0;padding:7px 0;background:transparent;color:var(--accent);font:inherit;font-size:12px;font-weight:650;cursor:pointer}
+.detail-id{color:var(--muted);font-size:11px}
+.detail-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:7px}
+.detail-heading h1{margin:0;font-size:clamp(22px,4vw,30px);line-height:1.2;letter-spacing:-.035em;overflow-wrap:anywhere}
+.detail-sub{display:flex;flex-wrap:wrap;gap:6px 10px;margin-bottom:18px;color:var(--muted);font-size:12px}
+.detail-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:13px;align-items:start}
+.detail-panel{min-width:0;padding:16px;background:var(--paper);border:1px solid var(--line);border-radius:15px;box-shadow:var(--shadow)}
+.detail-panel h2{margin:0 0 13px;color:#52625a;font-size:12px;font-weight:700;letter-spacing:.02em}
+.detail-panel .card-section{margin:0;padding:0;border:0}
+.detail-panel .spec-grid{gap:11px 15px}
+.detail-panel .spec dt,.detail-panel .plan-label{font-size:11px}
+.detail-panel .spec dd,.detail-panel .plan-value{font-size:12px}
+.detail-remark{margin:0 0 13px;padding:11px 12px;border:1px solid #e1ebe4;border-radius:10px;background:#f5f8f5;color:#355246;font-size:12px;white-space:pre-wrap;overflow-wrap:anywhere}
+.detail-history{margin-top:13px}
+.detail-history .chart-grid{gap:9px}
+.detail-history .history-toolbar{margin-bottom:10px}
+.detail-history .history-toolbar select{font-size:11px}
+.detail-demo-hint{margin:0 0 12px;padding:9px 11px;border-radius:10px;background:#edf2fc;color:#5570a1;font-size:11px}
+@media(max-width:760px){
+ .server-card{padding:14px 13px 12px}
+ .server-card .live-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px 7px}
+ .detail-screen{max-width:560px}
+ .detail-grid{grid-template-columns:1fr;gap:10px}
+ .detail-panel{padding:14px;border-radius:13px}
+ .detail-sub{margin-bottom:14px}
+}
+@media(max-width:360px){.server-card .live-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.detail-panel .spec-grid,.detail-panel .plan-grid{gap:8px}}
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="topbar"><div class="brand"><span class="brand-mark">M</span><span>MONITOR <span class="brand-sub">/ STATUS</span></span></div><div class="live-state" id="live-state"><span class="live-dot"></span><span id="live-label">正在连接</span></div></header>
+  <main>
+   <div id="home-screen">
+    <section class="hero"><div><h1 id="site-name">Monitor 状态</h1><p id="subtitle">节点状态与运行数据</p></div><div class="hero-meta" id="updated-at">等待数据</div></section>
+    <div id="demo-note" hidden></div><div class="notice" id="notice" hidden></div>
+    <section class="summary" id="summary" aria-label="状态概览"></section>
+    <section class="filters"><div class="group-list" id="groups" aria-label="按分组筛选"></div><label class="sr-only" for="search">搜索节点</label><input id="search" class="search" type="search" placeholder="搜索节点名称、系统或地区" autocomplete="off"></section>
+    <div class="section-head"><span id="list-title">节点</span><span id="list-count"></span></div>
+    <section class="cards" id="cards"><div class="loading">正在读取公开状态…</div></section>
+    <section class="traffic-summary" id="traffic-summary" aria-label="总流量统计"></section>
+   </div>
+    <section class="detail-screen" id="detail-screen" hidden></section>
+  </main>
+  <footer class="foot"><span>简洁呈现 · 数据来自 Monitor 公开 API</span><span>公开数据不含地址、主机名、私有备注或节点凭证</span></footer>
+</div>
+<script>
+(() => {
+  'use strict';
+  const SHORT = 'quiet-cards';
+  const $ = (id) => document.getElementById(id);
+  const state = { nodes: [], me: {}, config: { notice: '', show_history: true }, filter: null, search: '', selectedNodeId: new URLSearchParams(location.search).get('node'), historyDays: 30, hours: [], updated: null, demo: false, socket: null, poll: null, retry: null, inFlight: 0, paused: false };
+  const historyCache = new Map();
+  const historyOpen = new Set();
+  const selectedHours = new Map();
+  const escText = (value) => value == null ? '' : String(value);
+  const el = (tag, cls, text) => { const node = document.createElement(tag); if (cls) node.className = cls; if (text !== undefined && text !== null) node.textContent = String(text); return node; };
+  const add = (parent, child) => { if (child) parent.appendChild(child); return child; };
+  const num = (v) => typeof v === 'number' && Number.isFinite(v) ? v : null;
+  const val = (obj, key) => obj && Object.prototype.hasOwnProperty.call(obj, key) ? obj[key] : undefined;
+  const fmt = (n, digits=1) => n == null ? '—' : new Intl.NumberFormat('zh-CN',{maximumFractionDigits:digits}).format(n);
+  const bytes = (n) => { if (n == null || !Number.isFinite(n) || n < 0) return '—'; const units=['B','KB','MB','GB','TB','PB']; let i=0,v=n; while(v>=1024&&i<units.length-1){v/=1024;i++;} return `${fmt(v, i===0?0:2)} ${units[i]}`; };
+  const rate = (n) => n == null ? '—' : `${bytes(Math.max(0,n))}/s`;
+  const money = (amount, currency) => { if (num(amount) == null) return '—'; try { return new Intl.NumberFormat('zh-CN',{style:'currency',currency:typeof currency==='string'&&/^[A-Z]{3}$/.test(currency)?currency:'USD',maximumFractionDigits:2}).format(amount); } catch { return `${escText(currency||'')} ${fmt(amount,2)}`; } };
+  const pct = (used,total) => num(used) != null && num(total) != null && total > 0 ? Math.min(100,Math.max(0,used/total*100)) : null;
+  const cleanText = (s) => typeof s === 'string' ? s : '';
+  const dateText = (s) => { if (!s || typeof s !== 'string') return '—'; if(/^\d{4}-\d{2}-\d{2}$/.test(s))return s.replace(/-/g,'/'); const d=new Date(s); return Number.isNaN(d.getTime()) ? s : new Intl.DateTimeFormat('zh-CN',{year:'numeric',month:'2-digit',day:'2-digit'}).format(d); };
+  const uptimeText = (seconds) => { if (num(seconds) == null || seconds < 0) return '—'; let n=Math.floor(seconds); const d=Math.floor(n/86400); n%=86400; const h=Math.floor(n/3600); n%=3600; const m=Math.floor(n/60); return d?`${d}天 ${h}小时`:h?`${h}小时 ${m}分`:`${m}分钟`; };
+  const cycleText = (c) => ({monthly:'每月',quarterly:'每季',semiannual:'每半年',yearly:'每年',biennial:'每两年',triennial:'每三年',once:'一次性'}[c] || (typeof c==='string'&&/^\d+m$/.test(c)?`每 ${Number(c.slice(0,-1))} 个月`:'周期未注明'));
+  const trafficMode = (m) => ({sum:'上下行合计',max:'取较大方向',up:'仅计算上行',down:'仅计算下行'}[m] || '计量规则未注明');
+  const errMessage = async (res) => { const ct=res.headers.get('content-type')||''; if(ct.startsWith('text/plain')){const t=(await res.text()).trim();if(t)return t;} return res.status>=500?`hub 暂时没有正常响应（HTTP ${res.status}）`:`请求未通过（HTTP ${res.status}）`; };
+  async function api(path, init) { let res; try { res=await fetch(`/api${path}`,{cache:'no-store',...init}); } catch { throw new Error('连接不上 hub，请检查网络后重试'); } if(!res.ok) throw new Error(await errMessage(res)); try { return await res.json(); } catch { throw new Error('收到的不是 hub JSON 回复，请检查反向代理配置'); } }
+  const setLive = (mode, label) => { const box=$('live-state'); box.className=`live-state ${mode||''}`; $('live-label').textContent=label; };
+  function windowsFor(days) { const max=Math.max(1,Math.min(365,Number(days)||30))*24; const windows=[1,6,24,168,720,2160].filter(h=>h*1.25<=max); windows.push(max); return [...new Set(windows)]; }
+  const windowLabel = (h) => h%24===0 ? `${h/24} 天` : `${h} 小时`;
+  function selectOptions(nodeId) { const select=el('select'); select.setAttribute('aria-label','历史时间范围'); for(const h of state.hours){const o=el('option','',windowLabel(h));o.value=String(h);if(h===(selectedHours.get(nodeId)||state.hours[Math.min(2,state.hours.length-1)]))o.selected=true;select.appendChild(o);} return select; }
+  function kpi(label,value,note) { const box=el('div','stat');add(box,el('div','stat-label',label));add(box,el('div','stat-value',value));if(note)add(box,el('div','stat-note',note));return box; }
+  function currentM(n) { return n && n.metrics && typeof n.metrics==='object' ? n.metrics : null; }
+  function renderSummary(nodes) {
+    const root=$('summary'); root.replaceChildren(); const online=nodes.filter(n=>n&&n.online===true).length; let rx=0,tx=0,hasRx=false,hasTx=false;
+    for(const n of nodes){const m=currentM(n);if(n&&n.online&&m){const a=num(val(m,'net_rx')),b=num(val(m,'net_tx'));if(a!=null){rx+=a;hasRx=true;}if(b!=null){tx+=b;hasTx=true;}}}
+    add(root,kpi('在线节点',`${online} / ${nodes.length}`,nodes.length?`${nodes.length-online} 台离线或等待上报`:'暂无公开节点'));
+    add(root,kpi('实时下行',hasRx?rate(rx):'—','当前筛选节点合计'));
+    add(root,kpi('实时上行',hasTx?rate(tx):'—','当前筛选节点合计'));
+  }
+  function renderTrafficSummary(nodes) {
+    const root=$('traffic-summary'); root.replaceChildren();
+    let usedTotal=0,hasUsage=false,missingUsage=false,limitTotal=0,unlimited=false,missingLimit=false;
+    for(const n of nodes){
+      const used=num(val(n,'month_used')); if(used!=null&&used>=0){usedTotal+=used;hasUsage=true;}else missingUsage=true;
+      const limit=num(val(n,'traffic_limit')); if(limit===0)unlimited=true;else if(limit!=null&&limit>0)limitTotal+=limit;else missingLimit=true;
+    }
+    const comparable=nodes.length>0&&!unlimited&&!missingLimit&&!missingUsage&&limitTotal>0&&hasUsage;
+    const percent=comparable?usedTotal/limitTotal*100:null;
+    const head=el('div','traffic-head');
+    const titleWrap=el('div'); add(titleWrap,el('h2','traffic-title','总流量统计')); add(titleWrap,el('p','traffic-subtitle','按节点套餐口径汇总本期用量')); head.appendChild(titleWrap);
+    const pillText=!nodes.length?'暂无节点':unlimited?'含不限流量':missingLimit?'额度未完整':comparable?'额度已知':'用量未完整'; add(head,el('span','traffic-pill',pillText)); root.appendChild(head);
+    const values=el('div','traffic-values'); const usedBox=el('div'); add(usedBox,el('span','traffic-used-label','本期已用')); add(usedBox,el('strong','traffic-used',hasUsage?bytes(usedTotal):'—')); values.appendChild(usedBox);
+    const quota=el('div','traffic-quota'); quota.textContent=comparable?`${bytes(usedTotal)} / ${bytes(limitTotal)} · ${fmt(percent,1)}%`:nodes.length?`${hasUsage?bytes(usedTotal):'—'} 已统计`:'—'; values.appendChild(quota); root.appendChild(values);
+    const track=el('div','traffic-track');
+    if(comparable){const fill=el('span');const width=Math.max(0,Math.min(100,percent));fill.style.width=`${width}%`;track.appendChild(fill);track.setAttribute('role','progressbar');track.setAttribute('aria-label','总流量额度使用情况');track.setAttribute('aria-valuemin','0');track.setAttribute('aria-valuemax','100');track.setAttribute('aria-valuenow',String(Math.round(width)));if(percent>=90)track.classList.add('danger');else if(percent>=75)track.classList.add('warn');}
+    else{track.setAttribute('aria-label','总流量进度暂不可计算');const empty=el('span');empty.style.width='0%';track.appendChild(empty);}
+    root.appendChild(track);
+    let note='额度或用量数据不完整，暂不显示占比。';
+    if(!nodes.length)note='暂无节点数据可供统计。';
+    else if(unlimited)note='包含不限流量节点，保留总用量，但不计算汇总占比。';
+    else if(missingLimit)note='部分节点未提供流量上限，暂不计算汇总占比。';
+    else if(missingUsage)note='部分节点未上报本期用量，暂不计算汇总占比。';
+    else if(comparable)note='进度按所有当前筛选节点的套餐额度总和计算。';
+    add(root,el('p','traffic-note',note));
+  }
+  function renderGroups(nodes) {
+    const root=$('groups'); root.replaceChildren(); const groups=[...new Set(nodes.map(n=>cleanText(n&&n.group)).filter(Boolean))];
+    if(!groups.length){root.hidden=true;return;} root.hidden=false;
+    const items=[{key:null,label:'全部'},...groups.map(g=>({key:g,label:g}))]; if(nodes.some(n=>!cleanText(n&&n.group)))items.push({key:'',label:'未分组'});
+    for(const item of items){const b=el('button',`chip ${(state.filter===item.key)?'active':''}`,item.label);b.type='button';b.addEventListener('click',()=>{state.filter=item.key;render();});root.appendChild(b);}
+  }
+  function addKV(parent,label,value) { const wrap=el('div','kv');add(wrap,el('span','kv-label',label));add(wrap,el('span','kv-value',value==null||value===''?'—':String(value)));parent.appendChild(wrap); }
+  function addSpec(parent,label,value) { if(value===undefined||value===null||value==='')return;const wrap=el('div','spec');add(wrap,el('dt','',label));add(wrap,el('dd','',value));parent.appendChild(wrap); }
+  function resource(parent,label,used,total,unit='') { const box=el('div','resource');const top=el('div','resource-top');add(top,el('span','resource-name',label));const p=pct(used,total);const amount=(used==null?'—':bytes(used));const capacity=(total==null?'—':bytes(total));add(top,el('span','resource-value',p==null?`${amount} / ${capacity}`:`${fmt(p,0)}%`));box.appendChild(top);const bar=el('div','bar');if(p!=null){if(p>=90)bar.classList.add('danger');else if(p>=75)bar.classList.add('warn');const fill=el('span');fill.style.width=`${p}%`;bar.appendChild(fill);}box.appendChild(bar);add(box,el('div','mini',`${amount}${unit} / ${capacity}`));parent.appendChild(box); }
+  function localDateForMonth(s){return s?dateText(s):'—';}
+  function statusText(n,m) { if(n.online===true && !m) return ['warming','刚连接，等待首次上报']; if(n.online===true) return ['online','在线']; const ago=num(n.last_seen_ago); if(ago==null)return ['offline','从未上报']; const minutes=Math.max(0,Math.floor(ago/60)); return ['offline',minutes<1?'刚刚离线':`离线 ${minutes} 分钟`]; }
+  function expiryText(n) { const d=val(n,'expires_in'); if(d===null||d===undefined)return '未设置到期日期'; if(num(d)===null)return '到期信息不可用'; if(d<0)return `已过期 ${Math.abs(d)} 天`; if(d===0)return '今天到期'; return `${d} 天后到期`; }
+  function cardFor(n) {
+    const id=String(n.id??''); const m=currentM(n); const [statusClass,statusLabel]=statusText(n,m); const article=el('article','server-card');
+    const head=el('div','card-head'); const title=el('div','node-title'); add(title,el('h2','',cleanText(n.name)||`节点 ${id}`)); const left=el('div'); left.appendChild(title);
+    const meta=[]; if(cleanText(n.group))meta.push(cleanText(n.group)); if(cleanText(n.country))meta.push(cleanText(n.country).toUpperCase()); if(meta.length)add(left,el('div','card-sub',meta.join(' · ')));
+    head.appendChild(left); add(head,el('span',`status ${statusClass}`,statusLabel)); article.appendChild(head);
+    const resourceSection=el('section','card-section resource-panel'); add(resourceSection,el('h3','section-label','核心资源')); const rg=el('div','resource-grid');
+    const cpu=num(val(m,'cpu')); const memUsed=num(val(m,'mem_used')); const memTotal=num(val(m,'mem_total'))??num(n.mem_total); const diskUsed=num(val(m,'disk_used')); const diskTotal=num(val(m,'disk_total'))??num(n.disk_total);
+    resource(rg,'CPU',cpu==null?null:cpu,100,''); {const cell=rg.lastElementChild;cell.querySelector('.resource-value').textContent=cpu==null?'不可用':`${fmt(cpu,1)}%`;cell.querySelector('.mini').textContent=cpu==null?'暂无实时指标':'当前使用率';}
+    resource(rg,'内存',memUsed,memTotal); resource(rg,'磁盘',diskUsed,diskTotal); resourceSection.appendChild(rg); article.appendChild(resourceSection);
+    const network=el('section','card-section network-panel'); add(network,el('h3','section-label','实时网络')); const grid=el('div','network-grid');
+    const down=el('div','network-stat'); add(down,el('span','network-label','下行速率')); add(down,el('strong','network-value',rate(num(val(m,'net_rx'))))); grid.appendChild(down);
+    const up=el('div','network-stat upload'); add(up,el('span','network-label','上行速率')); add(up,el('strong','network-value',rate(num(val(m,'net_tx'))))); grid.appendChild(up);
+    network.appendChild(grid); article.appendChild(network);
+    const link=el('button','detail-link'); link.type='button'; add(link,el('span','','查看节点详情')); add(link,el('span','','›')); link.setAttribute('aria-label',`查看 ${cleanText(n.name)||`节点 ${id}`} 详情`); link.addEventListener('click',()=>openNode(id)); article.appendChild(link);
+    return article;
+  }
+  function detailFor(n) {
+    const id=String(n.id??''); const m=currentM(n); const [statusClass,statusLabel]=statusText(n,m); const wrap=el('div');
+    const toolbar=el('div','detail-toolbar'); const back=el('button','back-link','‹ 返回节点列表'); back.type='button'; back.addEventListener('click',goHome); toolbar.appendChild(back); add(toolbar,el('span','detail-id',`节点 ID ${id||'—'}`)); wrap.appendChild(toolbar);
+    const heading=el('div','detail-heading'); add(heading,el('h1','',cleanText(n.name)||`节点 ${id}`)); add(heading,el('span',`status ${statusClass}`,statusLabel)); wrap.appendChild(heading);
+    const sub=el('div','detail-sub'); if(cleanText(n.group))add(sub,el('span','',`分组 · ${cleanText(n.group)}`)); if(cleanText(n.country))add(sub,el('span','',`地区 · ${cleanText(n.country).toUpperCase()}`)); const updated=state.updated?new Intl.DateTimeFormat('zh-CN',{hour:'2-digit',minute:'2-digit',second:'2-digit'}).format(state.updated):''; if(updated)add(sub,el('span','',`更新于 ${updated}`)); wrap.appendChild(sub);
+    if(cleanText(n.public_remark))add(wrap,el('div','detail-remark',n.public_remark));
+    const livePanel=el('section','detail-panel detail-live'); add(livePanel,el('h2','','实时与累计数据')); const liveGrid=el('div','live-grid');
+    const load=val(m,'load'); addKV(liveGrid,'系统负载',Array.isArray(load)?load.slice(0,3).map(x=>num(x)==null?'—':fmt(x,2)).join(' / '):'—');
+    addKV(liveGrid,'TCP 连接',fmt(num(val(m,'tcp')),0)); addKV(liveGrid,'UDP 套接字',fmt(num(val(m,'udp')),0)); addKV(liveGrid,'进程数',fmt(num(val(m,'procs')),0));
+    addKV(liveGrid,'下行速率',rate(num(val(m,'net_rx')))); addKV(liveGrid,'上行速率',rate(num(val(m,'net_tx'))));
+    addKV(liveGrid,'累计流量',`${bytes(num(n.total_rx))} ↓ · ${bytes(num(n.total_tx))} ↑`); addKV(liveGrid,'本月流量',`${bytes(num(n.month_rx))} ↓ · ${bytes(num(n.month_tx))} ↑`);
+    addKV(liveGrid,'今日流量',`${bytes(num(n.day_rx))} ↓ · ${bytes(num(n.day_tx))} ↑`); addKV(liveGrid,'运行时长',uptimeText(num(val(m,'uptime')))); livePanel.appendChild(liveGrid); wrap.appendChild(livePanel);
+    const resourcePanel=el('section','detail-panel detail-resources'); add(resourcePanel,el('h2','','资源使用')); const resources=el('div','resource-grid');
+    const cpu=num(val(m,'cpu')); resource(resources,'CPU',cpu==null?null:cpu,100,''); {const cell=resources.lastElementChild;cell.querySelector('.resource-value').textContent=cpu==null?'不可用':`${fmt(cpu,1)}%`;cell.querySelector('.mini').textContent=cpu==null?'暂无实时指标':'当前使用率';}
+    resource(resources,'内存',num(val(m,'mem_used')),num(val(m,'mem_total'))??num(n.mem_total)); resource(resources,'交换空间',num(val(m,'swap_used')),num(val(m,'swap_total'))??num(n.swap_total)); resource(resources,'磁盘',num(val(m,'disk_used')),num(val(m,'disk_total'))??num(n.disk_total)); resourcePanel.appendChild(resources); wrap.appendChild(resourcePanel);
+    const columns=el('div','detail-grid');
+    const sys=el('section','detail-panel'); add(sys,el('h2','','系统规格')); const specs=el('dl','spec-grid');
+    addSpec(specs,'操作系统',n.os); addSpec(specs,'内核版本',n.kernel); addSpec(specs,'架构',n.arch); addSpec(specs,'虚拟化',n.virt); addSpec(specs,'处理器',n.cpu_name); const core=num(n.cpu_cores); addSpec(specs,'CPU 核心',core!=null?`${fmt(core,0)} 核`:null); addSpec(specs,'Agent 版本',n.agent_version); sys.appendChild(specs); columns.appendChild(sys);
+    const plan=el('section','detail-panel'); add(plan,el('h2','','套餐与到期')); const plans=el('div','plan-grid');
+    const p1=el('div','plan'); add(p1,el('div','plan-label','价格')); add(p1,el('div','plan-value',`${money(num(n.price),cleanText(n.currency))} · ${cycleText(n.billing_cycle)}`)); plans.appendChild(p1);
+    const p2=el('div','plan'); add(p2,el('div','plan-label','到期')); add(p2,el('div','plan-value',expiryText(n))); if(cleanText(n.expires_at))add(p2,el('div','plan-note',`日期 ${dateText(n.expires_at)}`)); plans.appendChild(p2);
+    const p3=el('div','plan'); add(p3,el('div','plan-label','流量额度')); add(p3,el('div','plan-value',num(n.traffic_limit)===0?'不限流量':bytes(num(n.traffic_limit)))); add(p3,el('div','plan-note',trafficMode(n.traffic_mode))); plans.appendChild(p3);
+    const p4=el('div','plan'); add(p4,el('div','plan-label','本期已用')); add(p4,el('div','plan-value',bytes(num(n.month_used)))); add(p4,el('div','plan-note',`周期起始 ${localDateForMonth(n.month_start)} · 每月 ${fmt(num(n.traffic_reset_day),0)} 日重置`)); plans.appendChild(p4); plan.appendChild(plans); columns.appendChild(plan); wrap.appendChild(columns);
+    if(state.config.show_history!==false){
+      const panel=el('section','detail-panel detail-history'); add(panel,el('h2','','历史趋势')); const body=el('div','history-body'); const toolbar=el('div','history-toolbar'); add(toolbar,el('span','history-hint','平均值与峰值按 hub 历史桶统计')); const select=selectOptions(id); toolbar.appendChild(select); body.appendChild(toolbar); const charts=el('div','chart-grid'); charts.dataset.chartRoot=''; body.appendChild(charts); const pings=el('div','ping-list'); pings.dataset.pingRoot=''; body.appendChild(pings); panel.appendChild(body); wrap.appendChild(panel);
+      if(historyCache.has(id))drawHistoryInto(body,historyCache.get(id)); else loadHistory(n,body);
+      select.addEventListener('change',()=>{const h=Number(select.value);selectedHours.set(n.id,h);historyCache.delete(id);loadHistory(n,body);});
+    }
+    return wrap;
+  }
+  function syncRoute(nodeId, replace=false) {
+    const url=new URL(location.href); if(nodeId)url.searchParams.set('node',nodeId);else url.searchParams.delete('node');
+    if(replace)history.replaceState({node:nodeId||null},'',url);else history.pushState({node:nodeId||null},'',url);
+  }
+  function openNode(id) { if(!id)return; state.selectedNodeId=String(id); syncRoute(state.selectedNodeId); render(); window.scrollTo({top:0,behavior:'smooth'}); }
+  function goHome() { state.selectedNodeId=null; syncRoute(null); render(); window.scrollTo({top:0,behavior:'smooth'}); }
+
+  function filteredNodes() { const q=state.search.trim().toLocaleLowerCase();return state.nodes.filter(n=>{if(!n||n.public===false)return false;const g=cleanText(n.group);if(state.filter!==null&&state.filter!==g)return false;if(q){const hay=[n.name,n.os,n.kernel,n.arch,n.virt,n.cpu_name,n.country,n.group,n.public_remark].map(cleanText).join(' ').toLocaleLowerCase();if(!hay.includes(q))return false;}return true;}); }
+  function render() {
+    const nodes=filteredNodes();renderSummary(nodes);renderTrafficSummary(nodes);renderGroups(state.nodes.filter(n=>n&&n.public!==false));const root=$('cards');root.replaceChildren();$('list-count').textContent=`${nodes.length} 台`;$('list-title').textContent=state.filter===null?'节点列表':state.filter===''?'未分组节点':`${state.filter} · 节点列表`;
+    if(state.demo){$('subtitle').textContent='公开状态与服务器资源概览';$('demo-note').hidden=false;$('demo-note').className='demo-ribbon';$('demo-note').textContent='演示数据 · 不连接真实 hub';} else {$('demo-note').hidden=true;}
+    if(!nodes.length){root.appendChild(el('div','empty',state.nodes.length?'没有符合筛选条件的节点':'暂无公开节点'));return;}
+    for(const n of nodes)root.appendChild(cardFor(n));
+    const selected=state.selectedNodeId==null?null:state.nodes.find(n=>String(n.id??'')===String(state.selectedNodeId));
+    const home=$('home-screen'), detail=$('detail-screen');
+    if(selected){home.hidden=true;detail.hidden=false;detail.replaceChildren(detailFor(selected));document.title=`${cleanText(selected.name)||'节点详情'} · ${cleanText(state.me.site_name)||'Monitor'}`;}
+    else{home.hidden=false;detail.hidden=true;detail.replaceChildren();document.title='清简 · Monitor';}
+  }
+  function drawLine(container, title, values, opts={}) {
+    const box=el('div','chart');const heading=el('div','chart-title');add(heading,el('span','',title));add(heading,el('strong','',opts.summary||''));box.appendChild(heading);
+    const nums=values.map(v=>v!==null&&typeof v==='object'?num(v.value):num(v)).filter(v=>v!=null);if(nums.length<2){box.appendChild(el('div','chart-empty','历史数据不足'));container.appendChild(box);return;}
+    const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 240 48');svg.setAttribute('preserveAspectRatio','none');
+    for(const y of [8,24,40]){const line=document.createElementNS(svg.namespaceURI,'line');line.setAttribute('x1','0');line.setAttribute('x2','240');line.setAttribute('y1',String(y));line.setAttribute('y2',String(y));line.setAttribute('stroke','#edf1ee');line.setAttribute('stroke-width','1');svg.appendChild(line);}
+    let max=opts.max!=null?opts.max:Math.max(...nums,1);if(max<=0)max=1;let path='';const last=values.length-1;values.forEach((entry,i)=>{const v=entry!==null&&typeof entry==='object'?num(entry.value):num(entry);if(v==null)return;const x=last?i/last*240:0;const y=42-Math.max(0,Math.min(1,v/max))*34;path+=(path?' L':'M')+`${x.toFixed(1)} ${y.toFixed(1)}`;});
+    const line=document.createElementNS(svg.namespaceURI,'path');line.setAttribute('d',path);line.setAttribute('fill','none');line.setAttribute('stroke',opts.color||'#177a58');line.setAttribute('stroke-width','2');line.setAttribute('stroke-linecap','round');line.setAttribute('stroke-linejoin','round');svg.appendChild(line);box.appendChild(svg);container.appendChild(box);
+  }
+  function drawHistoryInto(body,data) {
+    const chartRoot=body.querySelector('[data-chart-root]');const pingRoot=body.querySelector('[data-ping-root]');if(!chartRoot||!pingRoot)return;chartRoot.replaceChildren();pingRoot.replaceChildren();
+    const rows=Array.isArray(data.metrics)?data.metrics:[];const cpu=rows.map(r=>({value:num(r.cpu),max:num(r.cpu_max)}));const cpuVals=cpu.map(x=>x.value);const cpuPeak=Math.max(0,...cpu.map(x=>x.max??x.value??0));drawLine(chartRoot,'CPU 平均 / 最高',cpu,{summary:cpuVals.length?`${fmt(cpuVals.reduce((a,b)=>a+(b||0),0)/cpuVals.length,1)}% / ${fmt(cpuPeak,1)}%`:'',max:100,color:'#177a58'});
+    const mem=rows.map(r=>num(r.mem_used));drawLine(chartRoot,'内存占用',mem,{summary:mem.length?bytes(mem[mem.length-1]):'',max:Math.max(...mem.filter(x=>x!=null),1),color:'#4b74c4'});
+    const rx=rows.map(r=>({value:num(r.net_rx),max:num(r.net_rx_max)}));const tx=rows.map(r=>({value:num(r.net_tx),max:num(r.net_tx_max)}));const combined=[];const count=Math.max(rx.length,tx.length);for(let i=0;i<count;i++)combined.push(num(rx[i]?.value)!=null?rx[i].value:null);drawLine(chartRoot,'下行速率',rx,{summary:rx.length?rate(rx[rx.length-1].value):'',max:Math.max(...rx.map(x=>x.max??x.value??0),1),color:'#177a58'});drawLine(chartRoot,'上行速率',tx,{summary:tx.length?rate(tx[tx.length-1].value):'',max:Math.max(...tx.map(x=>x.max??x.value??0),1),color:'#b87a16'});
+    const ping=Array.isArray(data.ping)?data.ping:[];const probes=data.probes&&typeof data.probes==='object'?data.probes:{};const ids=[...new Set(ping.map(p=>p&&p.task_id).filter(id=>id!==undefined))];for(const taskId of ids){const samples=ping.filter(p=>p&&p.task_id===taskId);const latest=samples.length?num(samples[samples.length-1].latency):null;const loss=num(data.loss&&data.loss[String(taskId)])||0;drawLine(pingRoot,`${cleanText(probes[String(taskId)])||`探测 ${taskId}`} · 延迟`,samples.map(p=>num(p.latency)),{summary:`${latest==null?'—':fmt(latest,1)+' ms'} · 窗口丢包 ${fmt(loss,2)}%`,color:'#4b74c4'});}
+    if(!ping.length)pingRoot.appendChild(el('div','history-hint','暂无延迟监控记录'));
+  }
+  async function loadHistory(node, body) {
+    const id=String(node.id);const charts=body.querySelector('[data-chart-root]');if(charts)charts.replaceChildren(el('div','chart-empty','正在读取历史…'));const h=selectedHours.get(node.id)||state.hours[Math.min(2,state.hours.length-1)]||6;
+    if(state.demo){const data=demoHistory(h);historyCache.set(id,data);drawHistoryInto(body,data);return;} body.dataset.requestHours=String(h); try{const data=await api(`/nodes/${encodeURIComponent(id)}/metrics?hours=${encodeURIComponent(h)}&points=240`);const currentHours=selectedHours.get(node.id)||state.hours[Math.min(2,state.hours.length-1)]||6;if(currentHours===h)historyCache.set(id,data);if(body.isConnected&&body.dataset.requestHours===String(h))drawHistoryInto(body,data);}catch(e){if(body.isConnected){const root=body.querySelector('[data-chart-root]');if(root)root.replaceChildren(el('div','chart-empty',e.message||'历史数据暂不可用'));const p=body.querySelector('[data-ping-root]');if(p)p.replaceChildren();}}
+  }
+  function showFailure(message) { const root=$('cards');root.replaceChildren();const box=el('div','error-box');box.appendChild(document.createTextNode(message||'读取失败。'));const button=el('button','retry','重试');button.type='button';button.addEventListener('click',()=>start());box.appendChild(document.createElement('br'));box.appendChild(button);root.appendChild(box);setLive('', '连接失败'); }
+  function update(nodes) { if(!Array.isArray(nodes))throw new Error('hub 返回的节点列表格式不正确');state.nodes=nodes.filter(n=>n&&typeof n==='object'&&n.public!==false);state.updated=new Date();render();$('updated-at').textContent=`更新于 ${new Intl.DateTimeFormat('zh-CN',{hour:'2-digit',minute:'2-digit',second:'2-digit'}).format(state.updated)}`; }
+  async function fetchNodes() { if(state.paused)return;const epoch=state.inFlight;try{const nodes=await api('/nodes');if(!state.paused&&epoch===state.inFlight){update(nodes);if(!state.socket||state.socket.readyState!==WebSocket.OPEN)setLive('', '轮询更新');}}catch(e){if(!state.nodes.length)showFailure(e.message);else setLive('', '暂时断开');} }
+  function clearTimers(){if(state.poll){clearInterval(state.poll);state.poll=null;}if(state.retry){clearTimeout(state.retry);state.retry=null;}if(state.silent){clearTimeout(state.silent);state.silent=null;}}
+  function closeSocket(){if(state.socket){state.socket.onclose=null;try{state.socket.close();}catch{}state.socket=null;}}
+  function armSilence(socket){if(state.silent)clearTimeout(state.silent);state.silent=setTimeout(()=>{if(state.socket===socket&&!state.paused){closeSocket();fallback();}},12000);}
+  function connect() { if(state.paused||state.demo)return;closeSocket();clearTimers();fetchNodes();const gzip=typeof DecompressionStream==='function'?'?gzip':'';const scheme=location.protocol==='https:'?'wss':'ws';let socket;try{socket=new WebSocket(`${scheme}://${location.host}/api/ws${gzip}`);}catch{fallback();return;}state.socket=socket;let decoded=Promise.resolve();socket.onopen=()=>{setLive('connected','实时连接');armSilence(socket);};socket.onmessage=(event)=>{decoded=decoded.then(async()=>{let text;if(typeof event.data==='string')text=event.data;else if(typeof DecompressionStream==='function'){const stream=event.data.stream().pipeThrough(new DecompressionStream('gzip'));text=await new Response(stream).text();}else throw new Error('浏览器不支持解压历史推送');const payload=JSON.parse(text);if(socket.readyState!==WebSocket.OPEN||state.paused)return;if(!Array.isArray(payload.nodes))throw new Error('推送格式不正确');update(payload.nodes);armSilence(socket);}).catch(()=>{});};socket.onerror=()=>{setLive('', '切换轮询');};socket.onclose=()=>{if(state.paused)return;fallback();};state.poll=setInterval(()=>{if(!state.socket||state.socket.readyState!==WebSocket.OPEN)fetchNodes();},5000);state.retry=setTimeout(()=>{if(!state.paused&&(!state.socket||state.socket.readyState!==WebSocket.OPEN))connect();},15000); }
+  function fallback(){if(state.paused)return;if(state.silent){clearTimeout(state.silent);state.silent=null;}setLive('', '轮询更新');if(!state.poll)state.poll=setInterval(fetchNodes,5000);if(!state.retry)state.retry=setTimeout(connect,15000);}
+  function pause(){state.inFlight++;state.paused=true;closeSocket();clearTimers();}
+  function resume(){state.inFlight++;state.paused=false;if(state.demo){setLive('demo','演示预览');return;}connect();}
+  async function start(){if(location.search.includes('preview=1') || window.MONITOR_STATIC_PREVIEW===true){state.demo=true;state.me={site_name:'Northstar · Monitor',history_days:30};state.config={notice:'',show_history:true};state.historyDays=30;state.hours=windowsFor(30);state.nodes=demoNodes();$('site-name').textContent='Northstar · Monitor';$('subtitle').textContent='节点状态与运行数据';render();$('updated-at').textContent='示例状态 · 现在';setLive('demo','演示预览');return;}
+    $('cards').replaceChildren(el('div','loading','正在读取公开状态…'));
+    try{const [me,nodes,saved]=await Promise.all([api('/me'),api('/nodes'),api(`/themes/${SHORT}/config`).catch(()=>({}))]);state.me=me||{};state.historyDays=Math.max(1,Math.min(365,Number(state.me.history_days)||30));state.hours=windowsFor(state.historyDays);$('site-name').textContent=cleanText(state.me.site_name)||'Monitor 状态';$('subtitle').textContent='公开节点 · 实时运行数据';if(saved&&typeof saved==='object'){if(typeof saved.notice==='string')state.config.notice=saved.notice;if(typeof saved.show_history==='boolean')state.config.show_history=saved.show_history;}const note=state.config.notice.trim();if(note){$('notice').hidden=false;$('notice').textContent=note;}else $('notice').hidden=true;update(nodes);setLive('', '连接中');resume();}catch(e){showFailure(e.message);}}
+  $('search').addEventListener('input',e=>{state.search=e.target.value;render();});document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();else resume();});
+  function demoNodes(){const now=Math.floor(Date.now()/1000);const base={public:true,country:'JP',group:'亚洲',public_remark:'东京边缘节点 · 示例公开备注',os:'Ubuntu 24.04 LTS',kernel:'6.8.0-51-generic',arch:'x86_64',virt:'KVM',cpu_name:'AMD EPYC 7B13',cpu_cores:4,mem_total:8589934592,swap_total:2147483648,disk_total:107374182400,agent_version:'1.4.2',price:48,currency:'HKD',billing_cycle:'monthly',expires_at:'2026-12-05',expires_in:24,traffic_limit:1099511627776,traffic_mode:'sum',traffic_reset_day:5,total_rx:80530636800,total_tx:42949672960,month_rx:12000000000,month_tx:6600000000,month_used:18600000000,month_start:'2026-11-05',day_rx:900000000,day_tx:460000000};const live={uptime:1203940,cpu:27.4,load:[0.58,0.42,0.31],mem_total:8589934592,mem_used:4746342400,swap_total:2147483648,swap_used:268435456,disk_total:107374182400,disk_used:47982837760,net_rx:283115,net_tx:81642,total_rx:80530636800,total_tx:42949672960,month_rx:12000000000,month_tx:6600000000,tcp:42,udp:17,procs:126};return [{...base,id:101,name:'Tokyo · Edge 01',online:true,last_seen_ago:18,metrics:live},{...base,id:102,name:'Osaka · Backup',country:'JP',group:'亚洲',public_remark:'备用节点',os:'Debian 12',kernel:'6.1.0-27-amd64',arch:'x86_64',virt:'QEMU',cpu_name:'Intel Xeon Gold 6230',cpu_cores:2,mem_total:4294967296,swap_total:1073741824,disk_total:53687091200,agent_version:'1.4.1',price:0,currency:'HKD',billing_cycle:'once',expires_at:null,expires_in:null,traffic_limit:0,traffic_mode:'sum',traffic_reset_day:1,total_rx:34359738368,total_tx:12884901888,month_rx:4700000000,month_tx:2600000000,month_used:7300000000,month_start:'2026-11-01',day_rx:125000000,day_tx:76000000,online:false,last_seen_ago:5260,metrics:null}];}
+  function demoHistory(hours){const count=64;const step=Math.max(60,Math.round(hours*3600/count/60)*60);const now=Math.floor(Date.now()/1000);const metrics=[];const ping=[];for(let i=0;i<count;i++){const ts=now-(count-1-i)*step;const wave=Math.sin(i*.45);metrics.push({ts,cpu:Math.max(3,27+wave*7+Math.cos(i*.19)*4),cpu_max:Math.max(10,38+wave*8),mem_used:4200000000+i*8000000+wave*65000000,swap_used:240000000+wave*10000000,disk_used:47000000000+i*12000000,net_rx:230000+wave*60000,net_tx:72000+Math.cos(i*.5)*18000,net_rx_max:430000+wave*70000,net_tx_max:140000+wave*20000,tcp:39+Math.round(wave*7),udp:17,procs:122+Math.round(wave*5),minutes:step/60});ping.push({task_id:1,ts,latency:31+Math.round(Math.sin(i*.35)*4)},{task_id:2,ts,latency:65+Math.round(Math.cos(i*.26)*7)});}return {metrics,ping,probes:{'1':'区域线路','2':'跨区线路'},loss:{},step};}
+  start();
+})();
+</script>
+</body>
+</html>

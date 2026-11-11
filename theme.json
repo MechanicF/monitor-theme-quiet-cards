@@ -1,0 +1,28 @@
+{
+  "name": "清简卡片",
+  "short": "quiet-cards",
+  "description": "简洁、手机优先的 Monitor 状态页：首页以卡片呈现核心资源和实时速率，完整指标、TCP/UDP、规格、套餐、备注和趋势收纳在节点详情；页底汇总本期流量。",
+  "version": "1.2.0",
+  "author": "Cue",
+  "url": "",
+  "config": [
+    {
+      "type": "title",
+      "label": "首页"
+    },
+    {
+      "key": "notice",
+      "type": "text",
+      "label": "公告",
+      "default": "",
+      "help": "显示在首页顶部；留空则不显示。内容按纯文本展示。"
+    },
+    {
+      "key": "show_history",
+      "type": "boolean",
+      "label": "显示历史图表",
+      "default": true,
+      "help": "在节点详情页展示节点指标与延迟历史。"
+    }
+  ]
+}
