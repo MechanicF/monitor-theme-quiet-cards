@@ -2,7 +2,7 @@
 
 一款简洁、手机优先的 Monitor 状态页主题。首页以卡片呈现核心资源和实时速率；节点详情页收纳完整指标、TCP/UDP、规格、套餐、备注和趋势。
 
-当前版本为 **1.2.0**。主题配置位于 [`theme.json`](theme.json)，页面源码位于 [`dist/index.html`](dist/index.html)。
+当前版本为 **1.2.1**。主题配置位于 [`theme.json`](theme.json)，页面源码位于 [`dist/index.html`](dist/index.html)。
 
 ## 安装包
 

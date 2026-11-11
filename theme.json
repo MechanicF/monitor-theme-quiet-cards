@@ -2,9 +2,9 @@
   "name": "清简卡片",
   "short": "quiet-cards",
   "description": "简洁、手机优先的 Monitor 状态页：首页以卡片呈现核心资源和实时速率，完整指标、TCP/UDP、规格、套餐、备注和趋势收纳在节点详情；页底汇总本期流量。",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": "Cue",
-  "url": "",
+  "url": "https://github.com/MechanicF/monitor-theme-quiet-cards",
   "config": [
     {
       "type": "title",
